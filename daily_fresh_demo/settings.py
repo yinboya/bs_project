@@ -16,7 +16,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
+    # 'xadmin',
+    # 'crispy_forms',
+    # 'reversion',
+    # 'xlwt',
     'df_cart',
     'df_goods',
     'df_user',
@@ -54,7 +57,7 @@ TEMPLATES = [
     },
 ]
 
-# WSGI_APPLICATION = 'daily_fresh_demo.wsgi.application'
+WSGI_APPLICATION = 'daily_fresh_demo.wsgi.application'
 #
 # DATABASES = {
 #     'default': {
