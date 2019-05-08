@@ -4,9 +4,9 @@ from .models import UserInfo, GoodsBrowser
 
 
 class UserInfoAdmin(admin.ModelAdmin):
-    list_display = ["uname", "uemail", "ushou", "uaddress", "uyoubian", "uphone"]
+    list_display = ["uname", "uemail", "ushou", "uaddress", "uyoubian", "uphone","upwd"]
     list_per_page = 5
-    list_filter = ["uname", "uyoubian"]
+    list_filter = ["uname", "uyoubian",]
     search_fields = ["uname", "uyoubian"]
     readonly_fields = ["uname"]
 
