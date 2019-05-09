@@ -5,6 +5,7 @@ from df_user.models import UserInfo
 from .models import GoodsInfo, TypeInfo
 from df_cart.models import CartInfo
 from df_user.models import GoodsBrowser
+from user_action.models import UserComment
 
 
 def index(request):
@@ -99,6 +100,11 @@ def detail(request, gid):
     goods.save()
 
     news = goods.gtype.goodsinfo_set.order_by('-id')[0:2]
+
+    # 商品评论
+    goods_comments = UserComment.objects.filter(good_id=int(good_id))
+    print(goods_comments)
+
     context = {
         'title': goods.gtype.ttitle,
         'guest_cart': 1,
@@ -106,6 +112,7 @@ def detail(request, gid):
         'goods': goods,
         'news': news,
         'id': good_id,
+        'goods_comments': goods_comments
     }
     response = render(request, 'df_goods/detail.html', context)
 

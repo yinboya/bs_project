@@ -242,7 +242,8 @@ html,body{height:100%}
 .prize_bar{height:72px;background-color:#fff5f5;line-height:72px;}
 .prize_bar .show_pirze{font-size:20px;color:#ff3e3e;padding-left:20px}
 .prize_bar .show_pirze em{font-style:normal;font-size:36px;padding-left:10px}
-.prize_bar .show_unit{padding-left:150px}
+.prize_bar .show_unit{margin-left: 15px;}
+
 
 .goods_num{height:52px;margin-top:19px;}
 .goods_num .num_name{width:70px;height:52px;line-height:52px;}
@@ -473,7 +474,25 @@ html,body{height:100%}
 .order_goods_list .col04{width:20%}
 
 .oper_btn{display:inline-block;border:1px solid #ddd;color:#666;padding:5px 10px}
+.comment_btn{
+	background-color: #39a93e;
+    display: inline-block;
+    border: 1px solid #39a93e;
+    color: #FFFFFF;
+    padding: 5px 23px;}
 
+.mypopover{
+	width: 500px;
+	height: 300px;
+}
+.mypopover .layui-layer-title{
+	text-align: center;
+	padding: 0;
+}
+.layui-layer-page .layui-layer-btn{
+	padding: 0;
+	text-align: center;
+}
 .popup_con{display:none;}
 .popup{width:300px;height:150px;border:1px solid #dddddd;border-top:2px solid #00bc6f;background-color:#f7f7f7;position:fixed;
 	left:50%;

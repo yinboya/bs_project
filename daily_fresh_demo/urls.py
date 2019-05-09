@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^user/', include('df_user.urls', namespace='df_user')),
     url(r'^cart/', include('df_cart.urls', namespace='df_cart')),
     url(r'^order/', include('df_order.urls', namespace='df_order')),
+    url(r'^user_action/', include('user_action.urls', namespace='user_action')),
     url(r'^tinymce/', include('tinymce.urls')),  # 使用富文本编辑框配置confurl
     url(r'^media/(?P<path>.*)$', serve, {"document_root":MEDIA_ROOT})
 ]
