@@ -5,9 +5,10 @@
 
 {#  通过绑定js事件实现随着商品数量的增长商品总价上涨#}
     function plus() {
-        num = parseFloat($('.num_show').val());
-        kucun = parseFloat($('.goods_kucun').html());
-        if(num<=kucun){
+        var num = parseFloat($('.num_show').val());
+        var kucun = parseFloat($('.goods_kucun').html());
+        var keep_num = parseFloat($('.goods_keep').html());
+        if(num<kucun){
             $('.num_show').val(num+1);
             $('.num_show').blur();
         }
@@ -61,7 +62,10 @@
 				<span class="show_pirze">¥<em id="gprice">{{ goods.gprice }}</em></span>
 				<span class="show_unit">单  位：{{ goods.gunit }}</span>
 				<span class="show_unit">库  存：<span class="goods_kucun">{{ goods.gkucun }}</span></span>
-			</div>
+{#                <span class="show_unit">最小库存：<span class="goods_kucun">{{ goods.gmin }}</span></span>#}
+{#                <span class="show_unit">保留数量：<span class="goods_keep">{{ goods.gkeep }}</span></span>#}
+{#                <span class="show_unit">再进货数量：<span class="goods_kucun">{{ goods.gstock }}</span></span>#}
+            </div>
 			<div class="goods_num clearfix">
 				<div class="num_name fl">数 量：</div>
 				<div class="num_add fl">
@@ -108,12 +112,17 @@
 				<li>评论</li>
 			</ul>
 
-			<div class="tab_content">
+			<div class="tab_content detail">
 				<dl>
 					<dt>商品详情：</dt>
 					<dd>{{ goods.gcontent|safe }}</dd>
 				</dl>
 			</div>
+            <ul class="comment" style="display: none; margin-top: 10px;">
+                {% for goods_comment in goods_comments %}
+                    <li>用户{{ goods_comment.user.uname }}在{{ goods_comment.add_time }}评论：{{ goods_comment.comment }}</li>
+                {% endfor %}
+            </ul>
 
 		</div>
 	</div>
@@ -123,6 +132,23 @@
 	<script type="text/javascript" src="/static/js/jquery-1.12.4.min.js"></script>
 	<script type="text/javascript">
     $(document).ready(function(){
+
+        //评论和商品详情
+        $('.detail_tab>li').click(function () {
+            $(this).addClass('active').siblings().removeClass('active')
+            if($(this).index() == 0){
+                $('.detail').css('display','inline');
+                $('.comment').css('display','none');
+                 console.log('1')
+                console.log($(this))
+            }
+            if($(this).index() == 1){
+                 console.log('2')
+                 $('.detail').css('display','none');
+                $('.comment').css('display','block');
+            }
+        });
+
 
         $(".buy_btn").click(function () {
             num = parseInt($('.num_show').val());

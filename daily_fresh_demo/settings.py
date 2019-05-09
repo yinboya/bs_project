@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     'df_goods',
     'df_user',
     'df_order',
+    'user_action',
 
     'tinymce',  # 使用富文本编辑框要在settings文件中安装
 ]
@@ -32,7 +33,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    # 'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',

@@ -4,7 +4,6 @@ from django.db import models
 from tinymce.models import HTMLField  # 使用富文本编辑框要在settings文件中安装
 # 将一对多的关系维护在GoodsInfo中维护，另外商品信息与分类信息都属于重要信息需要使用逻辑删除
 
-
 class TypeInfo(models.Model):
     # 商品分类信息  水果 海鲜等
     isDelete = models.BooleanField(default=False)
@@ -16,6 +15,33 @@ class TypeInfo(models.Model):
 
     def __str__(self):
         return self.ttitle
+# class TypeInfo(models.Model):
+#     """
+#         商品分类
+#     """
+#     CATEGORY_TYPE = (
+#         (1, "一级类目"),
+#         (2, "二级类目"),
+#         (3, "三级类目"),
+#     )
+#     isDelete = models.BooleanField(default=False)
+#
+#     ttitle = models.CharField(max_length=20, verbose_name="类别名")
+#     code = models.CharField("类别code", default="", max_length=30, help_text="类别code")
+#     desc = models.TextField("类别描述", default="", help_text="类别描述")
+#     # 目录树级别
+#     category_type = models.IntegerField("类目级别", choices=CATEGORY_TYPE, help_text="类目级别", default=1)
+#     # 设置models有一个指向自己的外键
+#     parent_category = models.ForeignKey("self", on_delete=models.CASCADE, null=True, blank=True, verbose_name="父类目级别",
+#                                         help_text="父目录",
+#                                         related_name="sub_cat")
+#
+#     class Meta:
+#         verbose_name = "商品类型"
+#         verbose_name_plural = verbose_name
+#
+#     def __str__(self):
+#         return self.ttitle
 
 
 class GoodsInfo(models.Model):
