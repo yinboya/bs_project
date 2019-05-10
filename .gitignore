@@ -1,9 +1,6 @@
 .idea
-<<<<<<< HEAD
 ps/
 __pycache__/*
-=======
-ps
 *.py[cod]
 *.so
 *.egg
@@ -11,4 +8,4 @@ ps
 *.log
 local_settings.py
 db.sqlite3
->>>>>>> 51d343c4fef2b852c21ae2d8eb5b3fd7a592f47c
+
