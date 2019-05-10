@@ -1,2 +1,9 @@
 .idea
 ps
+*.py[cod]
+*.so
+*.egg
+*.egg-info
+*.log
+local_settings.py
+db.sqlite3
