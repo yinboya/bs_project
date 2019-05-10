@@ -112,7 +112,7 @@ def detail(request, gid):
         'goods': goods,
         'news': news,
         'id': good_id,
-        'goods_comments': goods_comments
+        'goods_comments': goods_comments,
     }
     response = render(request, 'df_goods/detail.html', context)
 
