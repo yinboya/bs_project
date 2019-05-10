@@ -4,7 +4,7 @@ from django.urls import path,re_path
 from django.conf.urls import url, include
 from django.views.static import serve  # 上传文件处理函数
 from df_user.views import ForgetPwdView,ResetView,ModifyPwdView
-from .settings import MEDIA_ROOT
+from .settings import MEDIA_ROOT,STATIC_ROOT
 
 
 
@@ -19,6 +19,8 @@ urlpatterns = [
     url(r'^user_action/', include('user_action.urls', namespace='user_action')),
     url(r'^tinymce/', include('tinymce.urls')),  # 使用富文本编辑框配置confurl
     url(r'^media/(?P<path>.*)$', serve, {"document_root":MEDIA_ROOT}),
+    # 关闭debug模式
+    re_path('static/(?P<path>.*)', serve, {'document_root': STATIC_ROOT}),
 
 
     # 忘记密码修改
