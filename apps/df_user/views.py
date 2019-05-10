@@ -18,7 +18,6 @@ def register(request):
 
 
 def register_handle(request):
-
     username = request.POST.get('user_name')
     password = request.POST.get('pwd')
     confirm_pwd = request.POST.get('confirm_pwd')
@@ -40,6 +39,14 @@ def register_handle(request):
         'username': username,
     }
     return render(request, 'df_user/login.html', context)
+
+def forget_pwd(request):
+    if request.method=='POST':
+        username = request.POST.get('user_name')
+        password = request.POST.get('pwd')
+        confirm_pwd = request.POST.get('confirm_pwd')
+        email = request.POST.get('email')
+
 
 
 def register_exist(request):

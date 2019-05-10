@@ -1,2 +1,3 @@
 .idea
-ps
+ps/
+__pycache__/*

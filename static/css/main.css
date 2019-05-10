@@ -282,7 +282,7 @@ html,body{height:100%}
 .no-mp{margin-top:0px;}
 .login_form_wrap{width:960px;height:480px;margin:0 auto;}
 .login_banner{width:381px;height:322px;background:url(../images/login_banner.png) no-repeat;margin-top:90px;}
-.slogan{width:40px;height:300px;font-size:30px;color:#f0f9e8;text-align:center;line-height:36px;margin:80px 0 0 120px}
+.slogan{width:24px;font-size:24px;color:#f0f9e8;text-align:center;line-height:26px;margin:43px 0 0 80px}
 .login_form{width:368px;height:378px;border:1px solid #c6c6c5;background-color:#fff; margin-top:50px;}
 
 .login_title{height:60px;width:308px;margin:10px auto;border-bottom:1px solid #e0e0e0;}
