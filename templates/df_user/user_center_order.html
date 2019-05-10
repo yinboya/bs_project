@@ -107,7 +107,8 @@
         console.log(goods_id);
         var data = {
             goods_id:goods_id,
-            comment: comment_value
+            comment: comment_value,
+            'csrfmiddlewaretoken':'{{ csrf_token }}'
         };
         $.ajax({
                     type:"POST",
