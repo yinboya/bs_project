@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c0163360-aeea-4fd4-941d-91fe213c49a8" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/extra_apps/__init__.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/extra_apps/xadmin/.tx/config" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/extra_apps/xadmin/__init__.py" afterDir="false" />
@@ -362,6 +363,24 @@
       <change beforePath="$PROJECT_DIR$/daily_fresh_demo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_fresh_demo/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/daily_fresh_demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_fresh_demo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/apps/df_user/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/df_user/migrations/0002_emailverifyrecord.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apps/utils/email_send.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/login.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/dig_close.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/unslider.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/validateDialog.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/df_user/forgetpwd.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/df_user/password_reset.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/df_user/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/df_user/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apps/df_user/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/apps/df_user/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daily_fresh_demo/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_fresh_demo/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/daily_fresh_demo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/daily_fresh_demo/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/df_user/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/df_user/login.html" afterDir="false" />
+>>>>>>> email
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -378,7 +397,11 @@
         <entry file="file://$PROJECT_DIR$/apps/df_user/views.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="353">
+<<<<<<< HEAD
               <caret line="66" selection-start-line="66" selection-end-line="66" />
+=======
+              <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+>>>>>>> email
               <folding>
                 <element signature="e#0#76#0" expanded="true" />
               </folding>
@@ -386,11 +409,19 @@
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="192">
               <caret line="6" column="5" lean-forward="true" selection-start-line="6" selection-start-column="5" selection-end-line="6" selection-end-column="5" />
+=======
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/df_user/password_reset.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1376">
+              <caret line="43" column="29" lean-forward="true" selection-start-line="43" selection-start-column="29" selection-end-line="43" selection-end-column="29" />
+>>>>>>> email
             </state>
           </provider>
         </entry>
@@ -408,15 +439,49 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/templates/df_user/login.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="343">
               <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+=======
+        <entry file="file://$PROJECT_DIR$/templates/df_user/forgetpwd.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="64">
+              <caret line="5" column="43" lean-forward="true" selection-start-line="5" selection-start-column="43" selection-end-line="5" selection-end-column="43" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/static/js/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="202">
+              <caret line="143" column="21" lean-forward="true" selection-start-line="143" selection-start-column="21" selection-end-line="143" selection-end-column="21" />
+              <folding>
+                <element signature="n#!!block;n#zy_Countdown#0" />
+                <element signature="n#!!block;n#refresh_captcha#0" />
+                <element signature="n#!!block;n#login_form_submit#0" />
+                <element signature="e#6581#8207#0" />
+              </folding>
+>>>>>>> email
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
+=======
+        <entry file="file://$PROJECT_DIR$/templates/df_user/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+>>>>>>> email
         <entry file="file://$PROJECT_DIR$/apps/df_user/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="416">
@@ -432,7 +497,11 @@
         <entry file="file://$PROJECT_DIR$/daily_fresh_demo/urls.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="321">
+<<<<<<< HEAD
               <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+=======
+              <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+>>>>>>> email
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
               </folding>
@@ -441,10 +510,26 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+<<<<<<< HEAD
         <entry file="file://$PROJECT_DIR$/daily_fresh_demo/settings.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="224">
               <caret line="7" selection-start-line="7" selection-end-line="7" />
+=======
+        <entry file="file://$PROJECT_DIR$/apps/df_user/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="7" column="60" lean-forward="true" selection-start-line="7" selection-start-column="60" selection-end-line="7" selection-end-column="60" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/daily_fresh_demo/settings.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="224">
+              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+>>>>>>> email
             </state>
           </provider>
         </entry>
@@ -484,6 +569,10 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/requirements.txt" />
+<<<<<<< HEAD
+=======
+        <option value="$PROJECT_DIR$/.gitignore" />
+>>>>>>> email
         <option value="$PROJECT_DIR$/apps/df_goods/apps.py" />
         <option value="$PROJECT_DIR$/apps/user_action/apps.py" />
         <option value="$PROJECT_DIR$/apps/user_action/admin.py" />
@@ -507,7 +596,10 @@
         <option value="$PROJECT_DIR$/templates/df_user/login.html" />
         <option value="$PROJECT_DIR$/templates/df_user/password_reset.html" />
         <option value="$PROJECT_DIR$/apps/df_user/views.py" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/.gitignore" />
+=======
+>>>>>>> email
       </list>
     </option>
   </component>
@@ -538,6 +630,7 @@
               <item name="bs_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="bs_project" type="462c0819:PsiDirectoryNode" />
               <item name="apps" type="462c0819:PsiDirectoryNode" />
+<<<<<<< HEAD
               <item name="df_order" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -546,12 +639,14 @@
               <item name="apps" type="462c0819:PsiDirectoryNode" />
               <item name="df_order" type="462c0819:PsiDirectoryNode" />
               <item name="migrations" type="462c0819:PsiDirectoryNode" />
+=======
+              <item name="df_user" type="462c0819:PsiDirectoryNode" />
+>>>>>>> email
             </path>
             <path>
               <item name="bs_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="bs_project" type="462c0819:PsiDirectoryNode" />
-              <item name="apps" type="462c0819:PsiDirectoryNode" />
-              <item name="df_user" type="462c0819:PsiDirectoryNode" />
+              <item name="daily_fresh_demo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="bs_project" type="b2602c69:ProjectViewProjectNode" />
@@ -678,23 +773,39 @@
       <workItem from="1557368569844" duration="95000" />
       <workItem from="1557368675022" duration="11920000" />
       <workItem from="1557401013038" duration="66000" />
+<<<<<<< HEAD
       <workItem from="1557468679092" duration="10787000" />
+=======
+      <workItem from="1557468679092" duration="9805000" />
+>>>>>>> email
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
+<<<<<<< HEAD
     <option name="totallyTimeSpent" value="60197000" />
+=======
+    <option name="totallyTimeSpent" value="59215000" />
+>>>>>>> email
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+<<<<<<< HEAD
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23801917" />
+=======
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12779553" />
+>>>>>>> email
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.37157536" />
+<<<<<<< HEAD
       <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32289416" />
+=======
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32289416" />
+>>>>>>> email
       <window_info anchor="bottom" id="Debug" order="3" weight="0.36472604" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -717,6 +828,19 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
+<<<<<<< HEAD
+=======
+    <entry file="file://$PROJECT_DIR$/apps/df_order/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="33" column="42" selection-start-line="33" selection-start-column="42" selection-end-line="33" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#28#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+>>>>>>> email
     <entry file="file://$PROJECT_DIR$/apps/user_action/tests.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="57">
@@ -1025,7 +1149,11 @@
     <entry file="file://$PROJECT_DIR$/daily_fresh_demo/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="224">
+<<<<<<< HEAD
           <caret line="7" selection-start-line="7" selection-end-line="7" />
+=======
+          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+>>>>>>> email
         </state>
       </provider>
     </entry>
@@ -1049,14 +1177,22 @@
     <entry file="file://$PROJECT_DIR$/templates/df_user/login.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="343">
+<<<<<<< HEAD
           <caret line="49" column="22" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+=======
+          <caret line="49" column="22" lean-forward="true" selection-start-line="49" selection-start-column="22" selection-end-line="49" selection-end-column="22" />
+>>>>>>> email
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/daily_fresh_demo/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
+<<<<<<< HEAD
           <caret line="21" column="1" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
+=======
+          <caret line="26" column="32" lean-forward="true" selection-start-line="26" selection-start-column="32" selection-end-line="26" selection-end-column="32" />
+>>>>>>> email
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
@@ -1073,7 +1209,11 @@
     <entry file="file://$PROJECT_DIR$/apps/df_user/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
+<<<<<<< HEAD
           <caret line="66" selection-start-line="66" selection-end-line="66" />
+=======
+          <caret line="106" lean-forward="true" selection-start-line="106" selection-end-line="106" />
+>>>>>>> email
           <folding>
             <element signature="e#0#76#0" expanded="true" />
           </folding>
