@@ -2,6 +2,7 @@ import os,sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 SECRET_KEY = 'uey!i4x26n!$d-73cs%blri)09#xfud_e361ne2h(#s2uj7)l!'
 
@@ -16,10 +17,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # 'xadmin',
-    # 'crispy_forms',
-    # 'reversion',
-    # 'xlwt',
+    'xadmin',
+    'crispy_forms',
+    'reversion',
+    'captcha',
     'df_cart',
     'df_goods',
     'df_user',
@@ -121,3 +122,13 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 600,
     'height': 400,
 }
+
+# 发送邮件的setting设置
+
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "599597576@qq.com"
+EMAIL_HOST_PASSWORD = "oejjqeshgusybeja"
+EMAIL_USE_TLS = True
+EMAIL_FROM = "599597576@qq.com"
+
