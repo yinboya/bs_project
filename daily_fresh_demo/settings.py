@@ -20,7 +20,7 @@ INSTALLED_APPS = [
     'xadmin',
     'crispy_forms',
     'reversion',
-    # 'captcha',
+    'captcha',
     'df_cart',
     'df_goods',
     'df_user',
