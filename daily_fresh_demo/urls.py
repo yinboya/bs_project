@@ -1,5 +1,5 @@
 from django.contrib import admin
-# import xadmin
+import xadmin
 from django.urls import path
 from django.conf.urls import url, include
 from django.views.static import serve  # 上传文件处理函数
@@ -7,9 +7,10 @@ from django.views.static import serve  # 上传文件处理函数
 from .settings import MEDIA_ROOT
 
 
+
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    # path('xadmin/', xadmin.site.urls),
+    # path('admin/', admin.site.urls),
+    path('xadmin/', xadmin.site.urls),
 
     url(r'^', include('df_goods.urls', namespace='df_goods')),
     url(r'^user/', include('df_user.urls', namespace='df_user')),
