@@ -9,7 +9,11 @@ from django.utils.translation import ugettext_lazy as _, ungettext
 from django.contrib.comments import get_model
 from django.contrib.comments.views.moderation import perform_flag, perform_approve, perform_delete
 
+<<<<<<< HEAD
 class UsernameSearch(object):
+=======
+class UsernameSearch :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     """The User object may not be auth.User, so we need to provide
     a mechanism for issuing the equivalent of a .filter(user__username=...)
     search in CommentAdmin.
@@ -18,7 +22,11 @@ class UsernameSearch(object):
         return 'user__%s' % username_field
 
 
+<<<<<<< HEAD
 class CommentsAdmin(object):
+=======
+class CommentsAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     form_layout = (
         Main(
             Fieldset(None,

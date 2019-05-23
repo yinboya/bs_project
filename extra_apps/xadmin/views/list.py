@@ -31,7 +31,11 @@ DOT = '.'
 EMPTY_CHANGELIST_VALUE = _('Null')
 
 
+<<<<<<< HEAD
 class FakeMethodField(object):
+=======
+class FakeMethodField :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     """
     This class used when a column is an model function, wrap function as a fake field to display in select columns.
     """
@@ -47,7 +51,11 @@ class ResultRow(dict):
     pass
 
 
+<<<<<<< HEAD
 class ResultItem(object):
+=======
+class ResultItem :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     def __init__(self, field_name, row):
         self.classes = []
@@ -169,6 +177,10 @@ class ListAdminView(ModelAdminView):
 
     def make_result_list(self):
         # Get search parameters from the query string.
+<<<<<<< HEAD
+=======
+        self.base_queryset = self.queryset()
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         self.list_queryset = self.get_list_queryset()
         self.ordering_field_columns = self.get_ordering_field_columns()
         self.paginator = self.get_paginator()

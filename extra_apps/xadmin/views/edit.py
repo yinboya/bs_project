@@ -224,6 +224,10 @@ class ModelFormAdminView(ModelAdminView):
 
         return layout
 
+<<<<<<< HEAD
+=======
+    @filter_hook
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     def get_form_helper(self):
         helper = FormHelper()
         helper.form_tag = False
@@ -508,7 +512,11 @@ class UpdateAdminView(ModelFormAdminView):
 
     def post(self, request, *args, **kwargs):
         if "_saveasnew" in self.request.POST:
+<<<<<<< HEAD
             return self.get_model_view(CreateAdminView, self.model).post(request)
+=======
+            return post(request)
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         return super(UpdateAdminView, self).post(request, *args, **kwargs)
 
     @filter_hook

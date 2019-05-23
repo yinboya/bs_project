@@ -23,7 +23,11 @@ from .util import (get_model_from_relation,
                    reverse_field_path, get_limit_choices_to_from_path, prepare_lookup_value)
 
 
+<<<<<<< HEAD
 class BaseFilter(object):
+=======
+class BaseFilter :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     title = None
     template = 'xadmin/filters/list.html'
 
@@ -76,7 +80,11 @@ class BaseFilter(object):
         return mark_safe(tpl.render(context=self.get_context()))
 
 
+<<<<<<< HEAD
 class FieldFilterManager(object):
+=======
+class FieldFilterManager :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     _field_list_filters = []
     _take_priority_index = 0
 

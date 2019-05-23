@@ -97,8 +97,13 @@ def lookup_needs_distinct(opts, lookup_path):
     """
     field_name = lookup_path.split('__', 1)[0]
     field = opts.get_field(field_name)
+<<<<<<< HEAD
     if ((hasattr(field, 'remote_field') and
          isinstance(field.remote_field, models.ManyToManyRel)) or
+=======
+    if ((hasattr(field, 'rel') and
+         isinstance(field.rel, models.ManyToManyRel)) or
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         (is_related_field(field) and
          not field.field.unique)):
         return True
@@ -371,8 +376,13 @@ def get_model_from_relation(field):
         return field.related_model
     elif is_related_field(field):
         return field.model
+<<<<<<< HEAD
     elif getattr(field, 'remote_field'):  # or isinstance?
         return field.remote_field.to
+=======
+    elif getattr(field, 'rel'):  # or isinstance?
+        return field.rel.to
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     else:
         raise NotRelationField
 
@@ -447,8 +457,13 @@ def get_limit_choices_to_from_path(model, path):
     fields = get_fields_from_path(model, path)
     fields = remove_trailing_data_field(fields)
     limit_choices_to = (
+<<<<<<< HEAD
         fields and hasattr(fields[-1], 'remote_field') and
         getattr(fields[-1].remote_field, 'limit_choices_to', None))
+=======
+        fields and hasattr(fields[-1], 'rel') and
+        getattr(fields[-1].rel, 'limit_choices_to', None))
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     if not limit_choices_to:
         return models.Q()  # empty Q
     elif isinstance(limit_choices_to, models.Q):

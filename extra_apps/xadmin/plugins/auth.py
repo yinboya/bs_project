@@ -44,7 +44,11 @@ class PermissionModelMultipleChoiceField(ModelMultipleChoiceField):
         return get_permission_name(p)
 
 
+<<<<<<< HEAD
 class GroupAdmin(object):
+=======
+class GroupAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     search_fields = ('name',)
     ordering = ('name',)
     style_fields = {'permissions': 'm2m_transfer'}
@@ -57,7 +61,11 @@ class GroupAdmin(object):
         return attrs
 
 
+<<<<<<< HEAD
 class UserAdmin(object):
+=======
+class UserAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     change_user_password_template = None
     list_display = ('username', 'email', 'first_name', 'last_name', 'is_staff')
     list_filter = ('is_staff', 'is_superuser', 'is_active')
@@ -108,7 +116,11 @@ class UserAdmin(object):
         return super(UserAdmin, self).get_form_layout()
 
 
+<<<<<<< HEAD
 class PermissionAdmin(object):
+=======
+class PermissionAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     def show_name(self, p):
         return get_permission_name(p)

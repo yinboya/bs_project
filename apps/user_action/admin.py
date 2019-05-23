@@ -9,6 +9,5 @@ class UserCommentAdmin(admin.ModelAdmin):
     search_fields = ['user', 'good', 'add_time', 'comment']
     list_display_links = ['user', 'good', 'add_time', 'comment']
 
-
 admin.site.register(UserComment, UserCommentAdmin)
 # admin.site.register(GoodsInfo.gkucun, GoodsInfoAdmin)

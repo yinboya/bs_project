@@ -1,12 +1,17 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect, reverse
 from django.core.paginator import Paginator
 from django.http import JsonResponse
+from django.views.generic.base import View
+from django.contrib.auth.hashers import make_password
 
 from hashlib import sha1
 
-from .models import GoodsBrowser
+from .models import GoodsBrowser,EmailVerifyRecord
 from . import user_decorator
+from .forms import ForgetForm,ModifyForm
 from df_order.models import *
+
+from utils.email_send import send_register_email
 
 
 def register(request):
@@ -18,7 +23,6 @@ def register(request):
 
 
 def register_handle(request):
-
     username = request.POST.get('user_name')
     password = request.POST.get('pwd')
     confirm_pwd = request.POST.get('confirm_pwd')
@@ -41,6 +45,16 @@ def register_handle(request):
     }
     return render(request, 'df_user/login.html', context)
 
+def forget_pwd(request):
+    if request.method=='POST':
+        username = request.POST.get('user_name')
+        password = request.POST.get('pwd')
+        confirm_pwd = request.POST.get('confirm_pwd')
+        email = request.POST.get('email')
+
+
+
+
 
 def register_exist(request):
     username = request.GET.get('uname')
@@ -57,6 +71,54 @@ def login(request):
         'uname': uname,
     }
     return render(request, 'df_user/login.html', context)
+
+
+class ForgetPwdView(View):
+    def get(self, request):
+        forget_form = ForgetForm(request.GET)
+        return render(request, 'df_user/forgetpwd.html', {'forget_form': forget_form})
+
+    def post(self, request):
+        forget_form = ForgetForm(request.POST)
+        if forget_form.is_valid():
+            email = request.POST.get('email', '')
+            send_register_email(email, 'forget')
+            return render(request, 'df_user/forgetpwd.html', {'forget_form': forget_form, 'msg': '重置密码连接已发送，请注意查收！'})
+        else:
+            return render(request, 'df_user/forgetpwd.html', {'forget_form': forget_form})
+class ResetView(View):
+    def get(self, request, active_code):
+        all_record = EmailVerifyRecord.objects.filter(code=active_code)
+        if all_record:
+            for record in all_record:
+                email = record.email
+                return render(request, 'df_user/password_reset.html', {'email': email})
+        else:
+            return render(request, 'df_user/forgetpwd.html', {'msg': '重置密码连接无效，请重新请求'})
+
+
+class ModifyPwdView(View):
+    def post(self, request):
+        modify_form = ModifyForm(request.POST)
+        if modify_form.is_valid():
+            pwd1 = request.POST.get('password1', '')
+            pwd2 = request.POST.get('password2', '')
+            email = request.POST.get('email', '')
+            if pwd1 != pwd2:
+                return render(request, 'df_user/password_reset.html', {'email': email, 'modify_form': modify_form, 'msg': '两次密码不同，请修改！'})
+            else:
+                user = UserInfo.objects.get(uemail=email)
+                # 密码加密
+                s1 = sha1()
+                s1.update(pwd2.encode('utf8'))
+                encrypted_pwd = s1.hexdigest()
+
+                user.upwd = encrypted_pwd
+                user.save()
+                return render(request, 'df_user/login.html', {'msg': '密码修改成功，请登录'})
+        else:
+            email = request.POST.get('email', '')
+            return render(request, 'df_user/password_reset.html', {'email': email, 'modify_form': modify_form})
 
 
 def login_handle(request):  # 没有利用ajax提交表单

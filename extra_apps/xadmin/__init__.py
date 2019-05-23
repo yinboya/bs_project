@@ -3,7 +3,11 @@ VERSION = (0,6,0)
 
 from xadmin.sites import AdminSite, site
 
+<<<<<<< HEAD
 class Settings(object):
+=======
+class Settings :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     pass
 
 

@@ -156,7 +156,11 @@ class BookmarkView(ModelAdminView):
         return self.render_response(content)
 
 
+<<<<<<< HEAD
 class BookmarkAdmin(object):
+=======
+class BookmarkAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     model_icon = 'fa fa-book'
     list_display = ('title', 'user', 'url_name', 'query')

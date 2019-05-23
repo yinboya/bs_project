@@ -2,7 +2,10 @@ from django.core.exceptions import PermissionDenied
 from django.db import transaction, router
 from django.http import Http404, HttpResponseRedirect
 from django.template.response import TemplateResponse
+<<<<<<< HEAD
 from django import VERSION as django_version
+=======
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 from django.utils import six
 from django.utils.encoding import force_text
 from django.utils.html import escape
@@ -18,6 +21,7 @@ from xadmin.views.base import ModelAdminView, filter_hook, csrf_protect_m
 class DeleteAdminView(ModelAdminView):
     delete_confirmation_template = None
 
+<<<<<<< HEAD
     def __init__(self, request, *args, **kwargs):
         if django_version > (2, 0):
             for model in self.admin_site._registry:
@@ -25,6 +29,8 @@ class DeleteAdminView(ModelAdminView):
                     setattr(self.admin_site._registry[model], 'has_delete_permission', self.has_delete_permission)
         super(DeleteAdminView, self).__init__(request, *args, **kwargs)
 
+=======
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     def init_request(self, object_id, *args, **kwargs):
         "The 'delete' admin view for this model."
         self.obj = self.get_object(unquote(object_id))
@@ -39,12 +45,17 @@ class DeleteAdminView(ModelAdminView):
 
         # Populate deleted_objects, a data structure of all related objects that
         # will also be deleted.
+<<<<<<< HEAD
         if django_version > (2, 1):
             (self.deleted_objects, model_count, self.perms_needed, self.protected) = get_deleted_objects(
                 [self.obj], self.opts, self.admin_site)
         else:
             (self.deleted_objects, model_count, self.perms_needed, self.protected) = get_deleted_objects(
                 [self.obj], self.opts, self.request.user, self.admin_site, using)
+=======
+        (self.deleted_objects, model_count, self.perms_needed, self.protected) = get_deleted_objects(
+            [self.obj], self.opts, self.request.user, self.admin_site, using)
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     @csrf_protect_m
     @filter_hook

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # -*-coding:utf-8-*-
 # _author_ = without
 # _Date_ = 2019/5/9
@@ -30,3 +31,28 @@ class GoodsInfoAdmin(object):
 
 # xadmin.site.register(TypeInfo, TypeInfoAdmin)
 # xadmin.site.register(GoodsInfo, GoodsInfoAdmin)
+=======
+import xadmin
+from .models import TypeInfo, GoodsInfo
+
+class TypeInfoAdmin:
+    list_display = ['id', 'ttitle']
+    list_per_page = 10
+    search_fields = ['ttitle']
+    list_display_links = ['ttitle']
+
+
+class GoodsInfoAdmin:
+    list_per_page = 20
+    list_display = ['id', 'gtitle', 'gunit', 'gclick', 'gprice', 'gpic', 'gkucun', 'gjianjie','gmin','gkeep','gstock']
+    list_editable = ['gkucun','gmin','gkeep','gstock' ]
+    readonly_fields = ['gclick']
+    search_fields = ['gtitle', 'gcontent', 'gjianjie']
+    list_display_links = ['gtitle']
+    list_filter = ['id', 'gtitle', 'gunit', 'gclick', 'gprice', 'gpic', 'gkucun', 'gjianjie','gmin','gkeep','gstock']
+
+
+xadmin.site.register(TypeInfo, TypeInfoAdmin)
+xadmin.site.register(GoodsInfo, GoodsInfoAdmin)
+
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095

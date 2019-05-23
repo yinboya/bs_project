@@ -220,8 +220,14 @@ class ExportPlugin(BaseAdminPlugin):
 
     def get_response(self, response, context, *args, **kwargs):
         file_type = self.request.GET.get('export_type', 'csv')
+<<<<<<< HEAD
         response = HttpResponse(
             content_type="%s; charset=UTF-8" % self.export_mimes[file_type])
+=======
+        charset = 'UTF-8' if file_type == 'xml' or file_type == 'json' else 'gbk'
+        response = HttpResponse(
+            content_type="%s; charset=%s" % (self.export_mimes[file_type], charset))
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
         file_name = self.opts.verbose_name.replace(' ', '_')
         response['Content-Disposition'] = ('attachment; filename=%s.%s' % (

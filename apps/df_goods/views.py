@@ -106,8 +106,12 @@ def detail(request, gid):
         'goods': goods,
         'news': news,
         'id': good_id,
+<<<<<<< HEAD
         'goods_comments': goods_comments
 
+=======
+        'goods_comments': goods_comments,
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     }
     response = render(request, 'df_goods/detail.html', context)
 

@@ -584,13 +584,21 @@ class InlineRevisionPlugin(BaseAdminPlugin):
         return formset
 
 
+<<<<<<< HEAD
 class VersionInline(object):
+=======
+class VersionInline :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     model = Version
     extra = 0
     style = 'accordion'
 
 
+<<<<<<< HEAD
 class ReversionAdmin(object):
+=======
+class ReversionAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     model_icon = 'fa fa-exchange'
 
     list_display = ('__str__', 'date_created', 'user', 'comment')

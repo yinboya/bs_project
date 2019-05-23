@@ -69,7 +69,11 @@ class WidgetTypeSelect(forms.Widget):
         return u'\n'.join(output)
 
 
+<<<<<<< HEAD
 class UserWidgetAdmin(object):
+=======
+class UserWidgetAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     model_icon = 'fa fa-dashboard'
     list_display = ('widget_type', 'page_id', 'user')
@@ -147,7 +151,11 @@ class UserWidgetAdmin(object):
 site.register(UserWidget, UserWidgetAdmin)
 
 
+<<<<<<< HEAD
 class WidgetManager(object):
+=======
+class WidgetManager :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     _widgets = None
 
     def __init__(self):
@@ -261,7 +269,11 @@ class HtmlWidget(BaseWidget):
         context['content'] = self.cleaned_data['content']
 
 
+<<<<<<< HEAD
 class ModelChoiceIterator(object):
+=======
+class ModelChoiceIterator :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     def __init__(self, field):
         self.field = field

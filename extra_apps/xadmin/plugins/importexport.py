@@ -32,7 +32,11 @@ class FooResource(resources.ModelResource):
 
 
 @xadmin.sites.register(Foo)
+<<<<<<< HEAD
 class FooAdmin(object):
+=======
+class FooAdmin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     import_export_args = {'import_resource_class': FooResource, 'export_resource_class': FooResource}
 
 ++++++++++++++++
@@ -315,7 +319,11 @@ class ImportProcessView(ImportBaseView):
             return HttpResponseRedirect(url)
 
 
+<<<<<<< HEAD
 class ExportMixin(object):
+=======
+class ExportMixin :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     #: resource class
     resource_class = None
     #: template for change_list view

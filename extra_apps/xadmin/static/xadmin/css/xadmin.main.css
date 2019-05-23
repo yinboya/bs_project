@@ -243,11 +243,18 @@ ul.nav-sitemenu li a {
 
 @media (min-width: 768px) {
   .panel-group.nav-sitemenu {
+<<<<<<< HEAD
     top: 65px;
     bottom: 0;
     overflow-y: auto;
     position: fixed;
     margin-left: -15px;
+=======
+    position: fixed;
+    margin-left: -15px;
+    overflow-y: auto;
+    height: 100%;
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
   }
   .panel-group.nav-sitemenu .panel .list-group.in{
     max-height: 500px;
@@ -306,7 +313,11 @@ a[class^="icon-"]:before, a[class*=" icon-"]:before {
 
 /** fix navbar input-append and input-prepend margin **/
 .navbar .navbar-brand {
+<<<<<<< HEAD
   max-width: 400px;
+=======
+  max-width: 600px;
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 }
 
 /** import for bp3.0 */

@@ -51,7 +51,11 @@ class TDField(Field):
     template = "xadmin/layout/td-field.html"
 
 
+<<<<<<< HEAD
 class InlineStyleManager(object):
+=======
+class InlineStyleManager :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     inline_styles = {}
 
     def register_style(self, name, style):
@@ -63,7 +67,11 @@ class InlineStyleManager(object):
 style_manager = InlineStyleManager()
 
 
+<<<<<<< HEAD
 class InlineStyle(object):
+=======
+class InlineStyle :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     template = 'xadmin/edit_inline/stacked.html'
 
     def __init__(self, view, formset):
@@ -227,11 +235,18 @@ class InlineModelAdmin(ModelFormAdminView):
                 form.readonly_fields = []
                 inst = form.save(commit=False)
                 if inst:
+<<<<<<< HEAD
                     meta_field_names = [field.name for field in inst._meta.get_fields()]
                     for readonly_field in readonly_fields:
                         value = None
                         label = None
                         if readonly_field in meta_field_names:
+=======
+                    for readonly_field in readonly_fields:
+                        value = None
+                        label = None
+                        if readonly_field in inst._meta.get_all_field_names():
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
                             label = inst._meta.get_field(readonly_field).verbose_name
                             value = smart_text(getattr(inst, readonly_field))
                         elif inspect.ismethod(getattr(inst, readonly_field, None)):

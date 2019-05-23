@@ -129,7 +129,11 @@ class JSONEncoder(DjangoJSONEncoder):
                 return smart_text(o)
 
 
+<<<<<<< HEAD
 class BaseAdminObject(object):
+=======
+class BaseAdminObject :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     def get_view(self, view_class, option_class=None, *args, **kwargs):
         opts = kwargs.pop('opts', {})
@@ -598,6 +602,10 @@ class ModelAdminView(CommAdminView):
         codename = get_permission_codename('change', self.opts)
         return ('change' not in self.remove_permissions) and self.user.has_perm('%s.%s' % (self.app_label, codename))
 
+<<<<<<< HEAD
     def has_delete_permission(self, request=None, obj=None):
+=======
+    def has_delete_permission(self, obj=None):
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         codename = get_permission_codename('delete', self.opts)
         return ('delete' not in self.remove_permissions) and self.user.has_perm('%s.%s' % (self.app_label, codename))

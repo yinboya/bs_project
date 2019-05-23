@@ -28,7 +28,11 @@
 @media (min-width: 768px) {
   #content-block:not(.full-content) {
     padding-left: 5px;
+<<<<<<< HEAD
     min-height: 450px;
+=======
+    min-height: calc(100vh - 190px);
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
   }
   .form-actions .more-btns{
     display: inline-block !important;

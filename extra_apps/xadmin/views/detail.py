@@ -58,7 +58,11 @@ class ShowField(Field):
         return html
 
 
+<<<<<<< HEAD
 class ResultField(object):
+=======
+class ResultField :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     def __init__(self, obj, field_name, admin_view=None):
         self.text = '&nbsp;'

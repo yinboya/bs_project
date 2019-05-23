@@ -114,7 +114,11 @@ class RelateMenuPlugin(BaseAdminPlugin):
         return list_display
 
 
+<<<<<<< HEAD
 class RelateObject(object):
+=======
+class RelateObject :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     def __init__(self, admin_view, lookup, value):
         self.admin_view = admin_view

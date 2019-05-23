@@ -29,7 +29,11 @@ class MergeAdminMetaclass(type):
         return type.__new__(cls, str(name), bases, attrs)
 
 
+<<<<<<< HEAD
 class AdminSite(object):
+=======
+class AdminSite :
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
     def __init__(self, name='xadmin'):
         self.name = name

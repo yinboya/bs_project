@@ -42,15 +42,27 @@ class AdminImageWidget(forms.FileInput):
     def __init__(self, attrs={}):
         super(AdminImageWidget, self).__init__(attrs)
 
+<<<<<<< HEAD
     def render(self, name, value, attrs=None, renderer=None):
+=======
+    def render(self, name, value, attrs=None):
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         output = []
         if value and hasattr(value, "url"):
             label = self.attrs.get('label', name)
             output.append('<a href="%s" target="_blank" title="%s" data-gallery="gallery"><img src="%s" class="field_img"/></a><br/>%s ' %
                          (value.url, label, value.url, _('Change:')))
+<<<<<<< HEAD
         output.append(super(AdminImageWidget, self).render(name, value, attrs, renderer))
         return mark_safe(u''.join(output))
 
+=======
+        output.append(super(AdminImageWidget, self).render(name, value, attrs))
+        return mark_safe(u''.join(output))
+
+    def use_required_attribute(self, initial):
+        return super(AdminImageWidget, self).use_required_attribute(initial) and not initial
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
 class ModelDetailPlugin(BaseAdminPlugin):
 

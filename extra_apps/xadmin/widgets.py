@@ -16,6 +16,11 @@ from django.utils.translation import ugettext as _
 
 from .util import vendor
 
+<<<<<<< HEAD
+=======
+DJANGO_11 = True
+
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
 class AdminDateWidget(forms.DateInput):
 
@@ -29,8 +34,13 @@ class AdminDateWidget(forms.DateInput):
             final_attrs.update(attrs)
         super(AdminDateWidget, self).__init__(attrs=final_attrs, format=format)
 
+<<<<<<< HEAD
     def render(self, name, value, attrs=None, renderer=None):
         input_html = super(AdminDateWidget, self).render(name, value, attrs, renderer)
+=======
+    def render(self, name, value, attrs=None):
+        input_html = super(AdminDateWidget, self).render(name, value, attrs)
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         return mark_safe('<div class="input-group date bootstrap-datepicker"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>%s'
                          '<span class="input-group-btn"><button class="btn btn-default" type="button">%s</button></span></div>' % (input_html, _(u'Today')))
 
@@ -47,8 +57,13 @@ class AdminTimeWidget(forms.TimeInput):
             final_attrs.update(attrs)
         super(AdminTimeWidget, self).__init__(attrs=final_attrs, format=format)
 
+<<<<<<< HEAD
     def render(self, name, value, attrs=None, renderer=None):
         input_html = super(AdminTimeWidget, self).render(name, value, attrs, renderer)
+=======
+    def render(self, name, value, attrs=None):
+        input_html = super(AdminTimeWidget, self).render(name, value, attrs)
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         return mark_safe('<div class="input-group time bootstrap-clockpicker"><span class="input-group-addon"><i class="fa fa-clock-o">'
                          '</i></span>%s<span class="input-group-btn"><button class="btn btn-default" type="button">%s</button></span></div>' % (input_html, _(u'Now')))
 
@@ -71,8 +86,13 @@ class AdminSplitDateTime(forms.SplitDateTimeWidget):
         # we want to define widgets.
         forms.MultiWidget.__init__(self, widgets, attrs)
 
+<<<<<<< HEAD
     def render(self, name, value, attrs=None, renderer=None):
         input_html = [ht for ht in super(AdminSplitDateTime, self).render(name, value, attrs, renderer).replace('><input', '>\n<input').split('\n') if ht != '']
+=======
+    def render(self, name, value, attrs=None):
+        input_html = [ht for ht in super(AdminSplitDateTime, self).render(name, value, attrs).replace('/><input', '/>\n<input').split('\n') if ht != '']
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         # return input_html
         return mark_safe('<div class="datetime clearfix"><div class="input-group date bootstrap-datepicker"><span class="input-group-addon"><i class="fa fa-calendar"></i></span>%s'
                          '<span class="input-group-btn"><button class="btn btn-default" type="button">%s</button></span></div>'
@@ -126,7 +146,14 @@ class AdminCheckboxSelect(forms.CheckboxSelectMultiple):
         if value is None:
             value = []
         has_id = attrs and 'id' in attrs
+<<<<<<< HEAD
         final_attrs = self.build_attrs(attrs, extra_attrs={'name': name})
+=======
+        if DJANGO_11:
+            final_attrs = self.build_attrs(attrs, extra_attrs={'name': name})
+        else:
+            final_attrs = self.build_attrs(attrs, name=name)
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
         output = []
         # Normalize to strings
         str_values = set([force_text(v) for v in value])
@@ -144,6 +171,10 @@ class AdminCheckboxSelect(forms.CheckboxSelectMultiple):
             option_value = force_text(option_value)
             rendered_cb = cb.render(name, option_value)
             option_label = conditional_escape(force_text(option_label))
+<<<<<<< HEAD
+=======
+            final_attrs['inline'] = True if self.attrs['inline'] else False
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 
             if final_attrs.get('inline', False):
                 output.append(u'<label%s class="checkbox-inline">%s %s</label>' % (label_for, rendered_cb, option_label))

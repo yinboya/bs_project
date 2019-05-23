@@ -2,10 +2,15 @@ import os,sys
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0,os.path.join(BASE_DIR,'apps'))
+<<<<<<< HEAD
 sys.path.insert(0,os.path.join(BASE_DIR,'extra_apps'))
+=======
+sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
+
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
 SECRET_KEY = 'uey!i4x26n!$d-73cs%blri)09#xfud_e361ne2h(#s2uj7)l!'
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["*"]
 
@@ -18,8 +23,13 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'xadmin',
     'crispy_forms',
+<<<<<<< HEAD
     # 'reversion',
     # 'xlwt',
+=======
+    'reversion',
+    'captcha',
+>>>>>>> 179e61dbddb0904127c8715edb6e9a1cf02e0095
     'df_cart',
     'df_goods',
     'df_user',
@@ -33,7 +43,7 @@ MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -74,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',   # 数据库引擎
         'NAME': 'last',       # 你要存储数据的库名，事先要创建之
         'USER': 'root',         # 数据库用户名
-        'PASSWORD': 'root',     # 密码
+        'PASSWORD': '123',     # 密码
         'HOST': '127.0.0.1',    # 主机
         'PORT': '3306',         # 数据库使用的端口
     }
@@ -106,10 +116,12 @@ USE_TZ = False  # 数据库取为国际时间
 
 # Static files (CSS, JavaScript, Images)
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
+
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 MEDIA_URL = '/media/'
 # 设置上传文件的路径
@@ -121,3 +133,13 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 600,
     'height': 400,
 }
+
+# 发送邮件的setting设置
+
+EMAIL_HOST = "smtp.qq.com"
+EMAIL_PORT = 25
+EMAIL_HOST_USER = "599597576@qq.com"
+EMAIL_HOST_PASSWORD = "oejjqeshgusybeja"
+EMAIL_USE_TLS = True
+EMAIL_FROM = "599597576@qq.com"
+
