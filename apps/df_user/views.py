@@ -159,3 +159,101 @@ def site(request):
         'user': user,
     }
     return render(request, 'df_user/user_center_site.html', context)
+
+def password(request):
+    """
+    找回密码页面
+    :param request:
+    :return:
+    """
+    return render(request, 'df_user/password.html')
+
+def password_exist(request):
+    username = request.GET.get('uname')
+    count = UserInfo.objects.filter(uname=username).count()
+    return JsonResponse({'count': count})
+
+
+def password_1(request):
+    """
+    验证用户名和密码
+    :param request:
+    :return:
+    """
+    username = request.GET.get("user_name")
+    email = request.GET.get("email")
+    password = request.GET.get("password")
+    user = UserInfo.objects.filter(uname=username)
+    if user:
+        user = user[0]
+    con = {
+        'title': '用户登陆',
+        'username': username,
+    }
+    if str(user.uemail) == str(email):
+        count = 1
+        s1 = sha1()
+        s1.update(password.encode('utf8'))
+        encrypted_pwd = s1.hexdigest()
+        user.upwd = encrypted_pwd
+        user.save()
+    else:
+        count = 0
+    return JsonResponse({'count': count})
+
+
+@user_decorator.login
+def password_again(request):
+    """
+    修改用户密码
+    :param request:
+    :return:
+    """
+    user_id = request.session['user_id']
+    user = UserInfo.objects.filter(id=user_id)
+    user = user[0]
+    if request.method == "POST":
+        user.ushou = request.POST.get('ushou')
+        user.uaddress = request.POST.get('uaddress')
+        user.uyoubian = request.POST.get('uyoubian')
+        user.uphone = request.POST.get('uphone')
+        user.save()
+    context = {
+        'page_name': 1,
+        'title': '修改密码',
+        'user': user,
+    }
+    return render(request,'df_user/user_password_reg.html',context)
+
+
+def password_jiu(request):
+    """
+    验证用户的旧密码
+    :param request:
+    :return:
+    """
+    user_id = request.session['user_id']
+    user = UserInfo.objects.filter(id=user_id)
+    user = user[0]
+    password1 = request.GET.get("password1")
+    password2 = request.GET.get("password2")
+    password3 = request.GET.get("password3")
+    s1 = sha1()
+    s1.update(password1.encode('utf8'))
+    encrypted_pwd1 = s1.hexdigest()
+    s1 = sha1()
+    s1.update(password2.encode('utf8'))
+    encrypted_pwd2 = s1.hexdigest()
+    if user.upwd == encrypted_pwd1:
+        user.upwd=encrypted_pwd2
+        user.save()
+        data = 1
+    else:
+        data = 0
+    return JsonResponse({'count': data})
+
+
+
+
+
+

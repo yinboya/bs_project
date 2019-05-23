@@ -57,11 +57,13 @@ def order_handle(request):
     user_id = request.session['user_id']  # 获取当前用户的id
     data = {}
     try:
+        user = UserInfo.objects.get(id=user_id)
         order_info = OrderInfo()  # 创建一个订单对象
         now = datetime.now()
         order_info.oid = '%s%d' % (now.strftime('%Y%m%d%H%M%S'), user_id)  # 订单号为订单提交时间和用户id的拼接
         order_info.odate = now  # 订单时间
         order_info.user_id = int(user_id)  # 订单的用户id
+        order_info.oaddress = user.ushou
         order_info.ototal = Decimal(request.POST.get('total'))  # 从前端获取的订单总价
         order_info.save()  # 保存订单
 

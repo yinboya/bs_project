@@ -2,18 +2,15 @@ from django.core.paginator import Paginator
 from django.shortcuts import render
 
 from df_user.models import UserInfo
+from user_action.models import UserComment
 from .models import GoodsInfo, TypeInfo
 from df_cart.models import CartInfo
 from df_user.models import GoodsBrowser
-from user_action.models import UserComment
 
 
 def index(request):
     # 查询各个分类的最新4条，最热4条数据
     typelist = TypeInfo.objects.all()
-    # for i in range(len(typelist)):
-    #     type0 = typelist[i].goodsinfo_set.order_by('-id')[0:4]  # 按照上传顺序
-    #     type01 = typelist[i].goodsinfo_set.order_by('-gclick')[0:4]  # 按照点击量
     #  _set 连表操作
     type0 = typelist[0].goodsinfo_set.order_by('-id')[0:4]  # 按照上传顺序
     type01 = typelist[0].goodsinfo_set.order_by('-gclick')[0:4]  # 按照点击量
@@ -100,10 +97,7 @@ def detail(request, gid):
     goods.save()
 
     news = goods.gtype.goodsinfo_set.order_by('-id')[0:2]
-
-    # 商品评论
     goods_comments = UserComment.objects.filter(good_id=int(good_id))
-    print(goods_comments)
 
     context = {
         'title': goods.gtype.ttitle,
@@ -113,6 +107,7 @@ def detail(request, gid):
         'news': news,
         'id': good_id,
         'goods_comments': goods_comments
+
     }
     response = render(request, 'df_goods/detail.html', context)
 

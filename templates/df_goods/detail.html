@@ -100,6 +100,7 @@
 						<a href="/{{ goods.id }}"><img src="{{ MEDIA_URL }}{{ goods.gpic }}"></a>
 						<h4><a href="#">{{ goods.gtitle }}</a></h4>
 						<div class="prize">￥{{ goods.gprice }}</div>
+                        <p id="good_id" hidden="hidden">{{ goods.id }}</p>
 					</li>
                     {%  endfor %}
                 </ul>
@@ -109,7 +110,7 @@
 		<div class="r_wrap fr clearfix">
 			<ul class="detail_tab clearfix">
 				<li class="active">商品介绍</li>
-				<li>评论</li>
+				<li >评论</li>
 			</ul>
 
 			<div class="tab_content detail">
